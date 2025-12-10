@@ -270,7 +270,7 @@ section p { color: var(--muted) }
 
 /* Define variables for easy theme changes */
 :root {
-  --team-card-bg: #ffffff;   /* default card background — change to any hex */
+  --team-card-bg: #f6f9ff;   /* default card background — change to any hex */
   --team-card-text: #111827; /* text color that contrasts the bg */
   --team-card-radius: 12px;
   --team-card-padding: 1.25rem;
@@ -324,3 +324,4 @@ section p { color: var(--muted) }
     padding: 1.5rem;
   }
 }
+
