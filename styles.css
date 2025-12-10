@@ -265,3 +265,62 @@ section p { color: var(--muted) }
   .testimonials-grid { grid-template-columns: 1fr; }
   .testimonial-card { padding: 20px; }
 }
+
+/* Team card solid background styles — append to the end of styles.css */
+
+/* Define variables for easy theme changes */
+:root {
+  --team-card-bg: #ffffff;   /* default card background — change to any hex */
+  --team-card-text: #111827; /* text color that contrasts the bg */
+  --team-card-radius: 12px;
+  --team-card-padding: 1.25rem;
+  --team-card-shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --team-card-shadow-hover: 0 12px 30px rgba(16,24,40,0.12);
+}
+
+/* Target the team cards */
+.members .card {
+  background-color: var(--team-card-bg);
+  color: var(--team-card-text);
+  padding: var(--team-card-padding);
+  border-radius: var(--team-card-radius);
+  box-shadow: var(--team-card-shadow);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  overflow: hidden;
+}
+
+/* Hover/active state */
+.members .card:hover,
+.members .card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--team-card-shadow-hover);
+}
+
+/* Make sure avatars don't overflow the rounded corners and keep layout tidy */
+.members .card .avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  background-color: transparent; /* if images have transparency they'll show the card bg */
+}
+
+/* If you want a darker card variant, add the class "dark" to the card element:
+   <article class="card dark"> ... </article>
+*/
+.members .card.dark {
+  --team-card-bg: #0f1724;   /* dark charcoal */
+  --team-card-text: #f9fafb; /* near-white text */
+}
+
+/* Optional: make the grid gap and card sizing more spacious on larger screens */
+@media (min-width: 900px) {
+  .members .grid {
+    gap: 1.25rem;
+  }
+  .members .card {
+    padding: 1.5rem;
+  }
+}
